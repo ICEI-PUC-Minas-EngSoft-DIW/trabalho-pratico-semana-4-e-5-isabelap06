@@ -4,136 +4,168 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Recomendações de Livros</title>
+
+  <!-- Bootstrap apenas CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Seu CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <header>
-  <h1 class="logo">Recomendações de Livros</h1>
+  <!-- HEADER com menu mobile sem JS (checkbox) -->
+  <header class="topo">
+    <h1 class="logo">Recomendações de Livros</h1>
 
-  <!-- controle do menu (sem JS) -->
-  <input type="checkbox" id="nav-check" class="nav-check" hidden>
+    <!-- controle do menu (sem JS) -->
+    <input type="checkbox" id="menu-check" hidden>
 
-  <!-- botão abrir -->
-  <label for="nav-check" class="nav-toggle" aria-label="Abrir menu">☰</label>
+    <!-- botão abrir -->
+    <label for="menu-check" class="btn-menu" aria-label="Abrir menu">☰</label>
 
-  <nav aria-label="Navegação principal">
-    <ul id="menu" class="menu">
-      <li><a href="#inicio">Início</a></li>
-      <li><a href="#romance">Romance</a></li>
-      <li><a href="#suspense">Suspense</a></li>
-      <li><a href="#destaques">Destaques</a></li>
-      <li><a href="#login">Login</a></li>
-    </ul>
-
-    <!-- botão fechar (X) -->
-    <label for="nav-check" class="menu-close" aria-label="Fechar menu">✕</label>
-  </nav>
-</header>
-
+    <nav class="menu-area" aria-label="Menu principal">
+      <ul class="menu-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#romance">Romance</a></li>
+        <li><a href="#suspense">Suspense</a></li>
+        <li><a href="#destaques">Destaques</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+      <!-- botão fechar -->
+      <label for="menu-check" class="btn-fechar" aria-label="Fechar">✕</label>
+    </nav>
   </header>
 
-  <main id="inicio">
-    <!-- Banner + texto introdutório -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-text">
-        <h2 id="hero-title">Bem-vindo à sua curadoria de leitura 💖</h2>
-        <p>Descubra recomendações de <strong>romance</strong> e <strong>suspense</strong>, listas selecionadas e um espaço para você entrar e salvar seus favoritos. Boa leitura!</p>
-      </div>
+  <main id="inicio" class="container">
 
-      <!-- Se tiver um arquivo "banner.jpg/png" coloque na pasta "public" ou ao lado do HTML -->
-     <figure class="hero-media">
-  <picture>
-    <source
-      type="image/webp"
-      srcset="image640.png 640w, image1024.png 1024w, image1600.png 1600w"
-      sizes="(min-width: 900px) 50vw, 100vw" />
-    <img
-      src="hero-1600.jpg"
-      alt="Pessoa lendo um livro em uma livraria, emoldurada por pilhas de livros."
-      width="1600" height="900"
-      loading="eager" fetchpriority="high" />
-  </picture>
-</figure>
-
-    </section>
-
-    <!-- Seção secundária: 3 cards com imagem, título e descrição -->
-    <section id="destaques" class="info-cards" aria-labelledby="cards-title">
-      <h2 id="cards-title">✨ Destaques do Site</h2>
-      <div class="cards-grid">
-        <article class="info-card">
-          <img src="livroromance1.png" alt="Capa do livro É Assim que Acaba" loading="lazy">
-          <h3>Romance que emociona</h3>
-          <p>Seleções com histórias de amor intensas para quem curte sentir junto com os personagens.</p>
-        </article>
-
-        <article class="info-card">
-          <img src="livrosuspense1.png" alt="Capa do livro Verity" loading="lazy">
-          <h3>Suspense que prende</h3>
-          <p>Tramas cheias de reviravoltas para ler de uma vez só e comentar com os amigos.</p>
-        </article>
-
-        <article class="info-card">
-          <img src="livrosuspense2.png" alt="Capa do livro Os Mentirosos" loading="lazy">
-          <h3>Listas e tendências</h3>
-          <p>Top 10 do mês, novidades e o que está bombando entre leitores como você.</p>
-        </article>
+    <!-- HERO (texto + imagem) -->
+    <section class="py-4">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-md-6">
+          <h2>Bem-vinde à sua curadoria de leitura 💖</h2>
+          <p>Descubra recomendações de <strong>romance</strong> e <strong>suspense</strong>, listas selecionadas e um espaço para salvar seus favoritos. Boa leitura!</p>
+          <a href="#destaques" class="btn btn-primary">Explorar destaques</a>
+        </div>
+        <div class="col-12 col-md-6">
+          <!-- use sua imagem; se estiver em public/, ajuste o caminho -->
+          <img src="image1600.png" class="img-fluid" alt="Banner de livros">
+        </div>
       </div>
     </section>
 
-    <!-- Suas seções originais de conteúdo -->
-    <section id="romance" class="books">
-      <h2>📚 Livros de Romance</h2>
-      <div class="cards-grid">
-        <article class="book-card">
-          <img src="livroromance1.png" alt="Capa do livro É Assim que Acaba" loading="lazy">
-          <h3>É Assim que Acaba</h3>
-        </article>
-        <article class="book-card">
-          <img src="livroromance2.png" alt="Capa do livro Novembro 9" loading="lazy">
-          <h3>Novembro 9</h3>
-        </article>
+    <!-- DESTAQUES: 3 cards (imagem + título + descrição) -->
+    <section id="destaques" class="py-4">
+      <h2 class="text-center mb-3" style="color:#d63384;">✨ Destaques do Site</h2>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <article class="card h-100 shadow-sm text-center">
+            <img src="livroromance1.png" class="card-img-top" alt="Capa do livro É Assim que Acaba">
+            <div class="card-body">
+              <h3 class="h5" style="color:#8e44ad;">Romance que emociona</h3>
+              <p class="mb-0">Histórias de amor intensas para sentir junto com os personagens.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col">
+          <article class="card h-100 shadow-sm text-center">
+            <img src="livrosuspense1.png" class="card-img-top" alt="Capa do livro Verity">
+            <div class="card-body">
+              <h3 class="h5" style="color:#8e44ad;">Suspense que prende</h3>
+              <p class="mb-0">Reviravoltas para ler de uma vez só e comentar com os amigos.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col">
+          <article class="card h-100 shadow-sm text-center">
+            <img src="livrosuspense2.png" class="card-img-top" alt="Capa do livro Os Mentirosos">
+            <div class="card-body">
+              <h3 class="h5" style="color:#8e44ad;">Listas e tendências</h3>
+              <p class="mb-0">Top 10 do mês, novidades e o que está bombando entre leitores.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="suspense" class="books">
-      <h2>🔍 Livros de Suspense</h2>
-      <div class="cards-grid">
-        <article class="book-card">
-          <img src="livrosuspense1.png" alt="Capa do livro Verity" loading="lazy">
-          <h3>Verity</h3>
-        </article>
-        <article class="book-card">
-          <img src="livrosuspense2.png" alt="Capa do livro Os Mentirosos" loading="lazy">
-          <h3>Os Mentirosos</h3>
-        </article>
+    <!-- ROMANCE (seus artigos, agora em grid Bootstrap) -->
+    <section id="romance" class="py-4">
+      <h2 class="text-center mb-3" style="color:#d63384;">📚 Livros de Romance</h2>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <article class="text-center">
+            <img src="livroromance1.png" alt="Capa do livro É Assim que Acaba" class="img-fluid mb-2">
+            <h3 style="color:#8e44ad;">É Assim que Acaba</h3>
+          </article>
+        </div>
+
+        <div class="col">
+          <article class="text-center">
+            <img src="livroromance2.png" alt="Capa do livro Novembro 9" class="img-fluid mb-2">
+            <h3 style="color:#8e44ad;">Novembro 9</h3>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="login" class="login">
-      <h2>👤 Login</h2>
-      <form action="#" method="post">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+    <!-- SUSPENSE -->
+    <section id="suspense" class="py-4">
+      <h2 class="text-center mb-3" style="color:#d63384;">🔍 Livros de Suspense</h2>
 
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" placeholder="••••••••" required>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <article class="text-center">
+            <img src="livrosuspense1.png" alt="Capa do livro Verity" class="img-fluid mb-2">
+            <h3 style="color:#8e44ad;">Verity</h3>
+          </article>
+        </div>
 
-        <button type="submit">Entrar</button>
-      </form>
+        <div class="col">
+          <article class="text-center">
+            <img src="livrosuspense2.png" alt="Capa do livro Os Mentirosos" class="img-fluid mb-2">
+            <h3 style="color:#8e44ad;">Os Mentirosos</h3>
+          </article>
+        </div>
+      </div>
     </section>
+
+    <!-- LOGIN -->
+    <section id="login" class="py-5">
+      <h2 class="text-center mb-3" style="color:#d63384;">👤 Login</h2>
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <form action="#" method="post" class="p-4 bg-white rounded shadow-sm">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="seuemail@exemplo.com" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="senha" class="form-label">Senha</label>
+              <input type="password" id="senha" name="senha" class="form-control" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <p>Site feito por Isabela Pinheiro.</p>
-    <ul class="social">
-      <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a></li>
-      <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a></li>
-      <li><a href="mailto:email@exemplo.com" aria-label="E-mail">E-mail</a></li>
+  <footer class="text-center py-3" style="background-color:#ffb3d9;">
+    <p class="mb-2">Site feito por Isabela Pinheiro.</p>
+    <ul class="list-inline m-0">
+      <li class="list-inline-item"><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+      <li class="list-inline-item"><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+      <li class="list-inline-item"><a href="mailto:email@exemplo.com">E-mail</a></li>
     </ul>
   </footer>
 
+  <!-- Sem JS 🙂 -->
 </body>
 </html>
