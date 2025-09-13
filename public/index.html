@@ -1,66 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recomendações de Livros</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recomendações de Livros</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <header>
     <header>
-        <h1>Recomendações de Livros</h1>
-        <nav>
-            <ul>
-                <li><a href="#romance">Romance</a></li>
-                <li><a href="#suspense">Suspense</a></li>
-                <li><a href="#login">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+  <h1 class="logo">Recomendações de Livros</h1>
 
-    <main>
-        <section id="romance">
-            <h2>📚 Livros de Romance</h2>
-            <article>
-                <img src="livroromance1.png" alt="Capa do livro É Assim que Acaba">
-                <h3>É Assim que Acaba</h3>
-            </article>
-            <article>
-                <img src="livroromance2.png" alt="Capa do livro Novembro 9">
-                <h3>Novembro 9</h3>
-            </article>
-        </section>
+  <!-- controle do menu (sem JS) -->
+  <input type="checkbox" id="nav-check" class="nav-check" hidden>
 
-        <section id="suspense">
-            <h2>🔍 Livros de Suspense</h2>
-            <article>
-                <img src="livrosuspense1.png" alt="Capa do livro Verity">
-                <h3>Verity</h3>
-            </article>
-            <article>
-                <img src="livrosuspense2.png" alt="Capa do livro Os Mentirosos">
-                <h3>Os Mentirosos</h3>
-            </article>
-        </section>
+  <!-- botão abrir -->
+  <label for="nav-check" class="nav-toggle" aria-label="Abrir menu">☰</label>
 
-        <section id="login">
-            <h2>👤 Login</h2>
-            <form action="#" method="post">
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
+  <nav aria-label="Navegação principal">
+    <ul id="menu" class="menu">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#romance">Romance</a></li>
+      <li><a href="#suspense">Suspense</a></li>
+      <li><a href="#destaques">Destaques</a></li>
+      <li><a href="#login">Login</a></li>
+    </ul>
 
-                <label for="senha">Senha:</label><br>
-                <input type="password" id="senha" name="senha" required><br><br>
+    <!-- botão fechar (X) -->
+    <label for="nav-check" class="menu-close" aria-label="Fechar menu">✕</label>
+  </nav>
+</header>
 
-                <button type="submit">Entrar</button>
-            </form>
-        </section>
-    </main>
+  </header>
 
-    <footer>
-        <p>Site feito por Isabela Pinheiro.</p>
-    </footer>
+  <main id="inicio">
+    <!-- Banner + texto introdutório -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <h2 id="hero-title">Bem-vindo à sua curadoria de leitura 💖</h2>
+        <p>Descubra recomendações de <strong>romance</strong> e <strong>suspense</strong>, listas selecionadas e um espaço para você entrar e salvar seus favoritos. Boa leitura!</p>
+      </div>
+
+      <!-- Se tiver um arquivo "banner.jpg/png" coloque na pasta "public" ou ao lado do HTML -->
+     <figure class="hero-media">
+  <picture>
+    <source
+      type="image/webp"
+      srcset="image640.png 640w, image1024.png 1024w, image1600.png 1600w"
+      sizes="(min-width: 900px) 50vw, 100vw" />
+    <img
+      src="hero-1600.jpg"
+      alt="Pessoa lendo um livro em uma livraria, emoldurada por pilhas de livros."
+      width="1600" height="900"
+      loading="eager" fetchpriority="high" />
+  </picture>
+</figure>
+
+    </section>
+
+    <!-- Seção secundária: 3 cards com imagem, título e descrição -->
+    <section id="destaques" class="info-cards" aria-labelledby="cards-title">
+      <h2 id="cards-title">✨ Destaques do Site</h2>
+      <div class="cards-grid">
+        <article class="info-card">
+          <img src="livroromance1.png" alt="Capa do livro É Assim que Acaba" loading="lazy">
+          <h3>Romance que emociona</h3>
+          <p>Seleções com histórias de amor intensas para quem curte sentir junto com os personagens.</p>
+        </article>
+
+        <article class="info-card">
+          <img src="livrosuspense1.png" alt="Capa do livro Verity" loading="lazy">
+          <h3>Suspense que prende</h3>
+          <p>Tramas cheias de reviravoltas para ler de uma vez só e comentar com os amigos.</p>
+        </article>
+
+        <article class="info-card">
+          <img src="livrosuspense2.png" alt="Capa do livro Os Mentirosos" loading="lazy">
+          <h3>Listas e tendências</h3>
+          <p>Top 10 do mês, novidades e o que está bombando entre leitores como você.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Suas seções originais de conteúdo -->
+    <section id="romance" class="books">
+      <h2>📚 Livros de Romance</h2>
+      <div class="cards-grid">
+        <article class="book-card">
+          <img src="livroromance1.png" alt="Capa do livro É Assim que Acaba" loading="lazy">
+          <h3>É Assim que Acaba</h3>
+        </article>
+        <article class="book-card">
+          <img src="livroromance2.png" alt="Capa do livro Novembro 9" loading="lazy">
+          <h3>Novembro 9</h3>
+        </article>
+      </div>
+    </section>
+
+    <section id="suspense" class="books">
+      <h2>🔍 Livros de Suspense</h2>
+      <div class="cards-grid">
+        <article class="book-card">
+          <img src="livrosuspense1.png" alt="Capa do livro Verity" loading="lazy">
+          <h3>Verity</h3>
+        </article>
+        <article class="book-card">
+          <img src="livrosuspense2.png" alt="Capa do livro Os Mentirosos" loading="lazy">
+          <h3>Os Mentirosos</h3>
+        </article>
+      </div>
+    </section>
+
+    <section id="login" class="login">
+      <h2>👤 Login</h2>
+      <form action="#" method="post">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" placeholder="••••••••" required>
+
+        <button type="submit">Entrar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Site feito por Isabela Pinheiro.</p>
+    <ul class="social">
+      <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a></li>
+      <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a></li>
+      <li><a href="mailto:email@exemplo.com" aria-label="E-mail">E-mail</a></li>
+    </ul>
+  </footer>
 
 </body>
 </html>

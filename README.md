@@ -8,14 +8,16 @@ Nessa atividade,vamos evoluir o projeto para que a home-page funcione bem tanto 
 
 ## Informações Gerais
 
-- Nome:
-- Matricula:
-- Proposta de projeto escolhida:
-- Breve descrição sobre seu projeto:
+- Nome:Isabela Pinheiro de Oliveira
+- Matricula:898602
+- Proposta de projeto escolhida: Temas e Conteúdos Associados
+- Breve descrição sobre seu projeto: Recomendações de livros
+
 
 ## Print da versão responsiva com CSS puro
 
-<<  COLOQUE A IMAGEM AQUI >>
+![alt text](image1.png)
+![alt text](image2.png)
 
 ## Print da versão responsiva com Bootstrap
 
